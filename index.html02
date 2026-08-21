@@ -1,1 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css" />
+    <title>Confere aí - Acessibilidade na Web</title>
+</head>
+<body>
+
+    <!-- Link de atalho rápido para leitores de tela e teclado -->
+    <a href="#conteudo-principal" class="link-atalho">Pular para o conteúdo principal</a>
+
+    <!-- Painel de Recursos Assistivos -->
+    <section class="barra-acessibilidade" aria-label="Recursos assistivos da página">
+        <div class="grupo-botoes">
+            <button id="btn-leitura" aria-label="Ativar leitura de tela por áudio">🔊 Ouvir Página</button>
+            <button id="btn-contraste" aria-label="Alternar modo de alto contraste">Alto Contraste</button>
+            <button id="btn-aumentar-fonte" aria-label="Aumentar o tamanho do texto">A +</button>
+            <button id="btn-diminuir-fonte" aria-label="Diminuir o tamanho do texto">A -</button>
+        </div>
+    </section>
+
+    <header class="cabecalho">
+        <h1>Confere aí</h1>
+        <nav aria-label="Navegação principal">
+            <a href="#" class="cabecalho-link">Início</a>
+        </nav>
+    </header>
+
+    <main id="conteudo-principal" tabindex="-1">
+        <h2>Descubra a verdade interagindo com os cartões</h2>
+        <p class="instrucao">Clique, aperte Enter ou use o leitor de voz para revelar os fatos.</p>
+
+        <section class="grade-cartoes" aria-label="Galeria de fatos e mitos">
+
+            <!-- Cartão 1 -->
+            <article class="cartao">
+                <button class="cartao-btn" aria-expanded="false" aria-label="Cartão 1: Pinguins conseguem voar como pássaros? Clique para revelar a resposta.">
+                    <div class="cartao-interno">
+                        <div class="cartao-frente" aria-hidden="false">
+                            <img src="https://static.nationalgeographicbrasil.com/files/styles/image_3200/public/mm1012723121410486.jpg?w=1900&h=2849" alt="Pinguim sobre a neve olhando para o céu" class="cartao-imagem">
+                            <p>Pinguins conseguem voar como pássaros!</p>
+                        </div>
+                        <div class="cartao-verso" aria-hidden="true">
+                            <img src="https://static.nationalgeographicbrasil.com/files/styles/image_3200/public/mm1012723121410486.jpg?w=1900&h=2849" alt="Pinguim sobre a neve" class="cartao-imagem">
+                            <p><strong>Mito!</strong> Pinguins não voam no ar, mas são excelentes nadadores.</p>
+                        </div>
+                    </div>
+                </button>
+            </article>
+
+            <!-- Cartão 2 -->
+            <article class="cartao">
+                <button class="cartao-btn" aria-expanded="false" aria-label="Cartão 2: Pinguins vivem no Pólo Norte? Clique para revelar a resposta.">
+                    <div class="cartao-interno">
+                        <div class="cartao-frente" aria-hidden="false">
+                            <img src="https://static.nationalgeographicbrasil.com/files/styles/image_3200/public/mm1012723121410486.jpg?w=1900&h=2849" alt="Pinguim sobre a neve" class="cartao-imagem">
+                            <p>Pinguins e Ursos-Polares vivem juntos no Pólo Norte!</p>
+                        </div>
+                        <div class="cartao-verso" aria-hidden="true">
+                            <img src="https://static.nationalgeographicbrasil.com/files/styles/image_3200/public/mm1012723121410486.jpg?w=1900&h=2849" alt="Pinguim na Antártica" class="cartao-imagem">
+                            <p><strong>Mito!</strong> Pinguins vivem no Hemisfério Sul (Antártica) e ursos no Norte.</p>
+                        </div>
+                    </div>
+                </button>
+            </article>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>Projeto de Acessibilidade Web — Desenvolvido por Eliel</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!-- Biblioteca de voz natural -->
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=FREE_KEY"></script>
+<script src="script.js"></script>
 
