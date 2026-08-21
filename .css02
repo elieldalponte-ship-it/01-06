@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-pagina: #f5f2f2;
+    --bg-primario: #743714;
+    --texto-primario: #ffffff;
+    --texto-escuro: #222222;
+    --bg-cartao: #ffffff;
+    --foco-cor: #0056b3;
+}
+
+/* Tema de Alto Contraste para baixa visão */
+body.alto-contraste {
+    --bg-pagina: #000000;
+    --bg-primario: #000000;
+    --texto-primario: #ffff00;
+    --texto-escuro: #ffffff;
+    --bg-cartao: #1a1a1a;
+    --foco-cor: #00ffff;
+}
+
+body.alto-contraste .cartao-frente,
+body.alto-contraste .cartao-verso {
+    border: 3px solid #ffff00;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--bg-pagina);
+    color: var(--texto-escuro);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+/* Link para pular direto ao conteúdo via teclado */
+.link-atalho {
+    position: absolute;
+    top: -50px;
+    left: 10px;
+    background: #000;
+    color: #fff;
+    padding: 10px 15px;
+    z-index: 1000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.link-atalho:focus {
+    top: 10px;
+    outline: 4px solid var(--foco-cor);
+}
+
+/* Barra Superior com Recursos Assistivos */
+.barra-acessibilidade {
+    background-color: #1a1a1a;
+    padding: 10px 25px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.grupo-botoes {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.barra-acessibilidade button {
+    background: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.barra-acessibilidade button:hover,
+.barra-acessibilidade button:focus {
+    outline: 3px solid var(--foco-cor);
+    background-color: #e6e6e6;
+}
+
+.cabecalho {
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-primario);
+}
+
+h1 {
+    color: var(--texto-primario);
+    font-size: 1.6rem;
+}
+
+.cabecalho-link {
+    color: var(--texto-primario);
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+}
+
+h2 {
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.instrucao {
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+.grade-cartoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+/* Estrutura Interativa dos Cartões */
+.cartao {
+    width: 280px;
+    height: 380px;
+    perspective: 1000px;
+}
+
+.cartao-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    text-align: left;
+    border-radius: 12px;
+}
+
+/* Indicador de foco visível para teclado */
+.cartao-btn:focus,
+a:focus {
+    outline: 4px solid var(--foco-cor);
+    outline-offset: 4px;
+}
+
+.cartao-interno {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.cartao-btn.virado .cartao-interno {
+    transform: rotateY(180deg);
+}
+
+.cartao-frente, .cartao-verso {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    backface-visibility: hidden;
+    background-color: var(--bg-cartao);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.cartao-frente p, .cartao-verso p {
+    padding: 15px;
+    font-size: 1rem;
+}
+
+.cartao-verso {
+    transform: rotateY(180deg);
+}
+
+.cartao-imagem {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+footer {
+    background-color: var(--bg-primario);
+    padding: 15px 25px;
+    color: var(--texto-primario);
+    text-align: center;
+}
