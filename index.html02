@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilos.css" />
+    <link rel="stylesheet" href="estilo.css" />
     <title>Confere aí - Acessibilidade na Web</title>
 </head>
 <body>
@@ -16,6 +16,7 @@
         <div class="grupo-botoes">
             <button id="btn-leitura" aria-label="Ativar leitura de tela por áudio">🔊 Ouvir Página</button>
             <button id="btn-contraste" aria-label="Alternar modo de alto contraste">Alto Contraste</button>
+            <button id="btn-dislexia" aria-label="Ativar fonte especial para dislexia">Modo Dislexia</button>
             <button id="btn-aumentar-fonte" aria-label="Aumentar o tamanho do texto">A +</button>
             <button id="btn-diminuir-fonte" aria-label="Diminuir o tamanho do texto">A -</button>
         </div>
@@ -52,7 +53,7 @@
 
             <!-- Cartão 2 -->
             <article class="cartao">
-                <button class="cartao-btn" aria-expanded="false" aria-label="Cartão 2: Pinguins vivem no Pólo Norte? Clique para revelar a resposta.">
+                <button class="cartao-btn" aria-expanded="false" aria-label="Cartão 2: Pinguins e Ursos-Polares vivem juntos no Pólo Norte? Clique para revelar a resposta.">
                     <div class="cartao-interno">
                         <div class="cartao-frente" aria-hidden="false">
                             <img src="https://static.nationalgeographicbrasil.com/files/styles/image_3200/public/mm1012723121410486.jpg?w=1900&h=2849" alt="Pinguim sobre a neve" class="cartao-imagem">
@@ -70,14 +71,12 @@
     </main>
 
     <footer>
-        <p>Projeto de Acessibilidade Web — Desenvolvido por Eliel</p>
+        <p>Projeto de Acessibilidade Web — Desenvolvido por Eliel e Peterson</p>
     </footer>
 
+    <!-- Som de virar carta invisível na página -->
+    <audio id="som-virar" src="https://actions.google.com/sounds/v1/paper_dirt/page_turn.ogg" preload="auto"></audio>
+    
     <script src="script.js"></script>
 </body>
 </html>
-
-<!-- Biblioteca de voz natural -->
-<script src="https://code.responsivevoice.org/responsivevoice.js?key=FREE_KEY"></script>
-<script src="script.js"></script>
-
